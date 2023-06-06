@@ -23,7 +23,7 @@ document.getElementById('activityForm').addEventListener('submit', function(even
   });
 
   function updatePoints(type) {
-    //TODO: LOGICA DE PONTOS 
+    //TODO: LOGICA DE PONTOS A
 
     var pointsDisplay = document.createElement('div');
     pointsDisplay.innerHTML = 'Tipo de Atividade: ' + type + '<br>' +
