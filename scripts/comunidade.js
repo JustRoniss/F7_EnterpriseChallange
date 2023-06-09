@@ -6,29 +6,44 @@ document.getElementById('activityForm').addEventListener('submit', function(even
     var action = document.getElementById('actionInput').value;
     var type = document.getElementById('typeSelect').value;
 
-
-    var activityRecord = document.createElement('div');
-    activityRecord.innerHTML = '<strong>Nome:</strong> ' + name + '<br>' +
-                              '<strong>Ação:</strong> ' + action + '<br>' +
-                              '<strong>Tipo de Atividade:</strong> ' + type + '<br><br>';
-    document.getElementById('activityRecords').appendChild(activityRecord);
-
     
     document.getElementById('nameInput').value = '';
     document.getElementById('actionInput').value = '';
     document.getElementById('typeSelect').value = '';
 
 
-    updatePoints(type);
+    updatePoints(name, action, type);
   });
 
-  function updatePoints(type) {
-    //TODO: LOGICA DE PONTOS A
-
-    var pointsDisplay = document.createElement('div');
-    pointsDisplay.innerHTML = 'Tipo de Atividade: ' + type + '<br>' +
-                              'Pontos Virtuais: 100'; 
-
-
-    document.getElementById('activityRecords').appendChild(pointsDisplay);
+  function updatePoints(name, action,type) {
+    if(type == 1){
+      var points = 50;
+    }
+    show(name, action,type, points);
   }
+
+    function show (name, action, type, points){
+      var pointsDisplay = document.createElement('div');
+      pointsDisplay.innerHTML =  `
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item m-2">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        ${name}
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p>Telefone: ${name}</p>
+                        <p>Acão: ${action} </p>
+                        <p>AÇÃO: ${type}</p>
+                        <p>PONTOS: ${points}</p>
+                    </div>
+                </div>
+          </div>
+      </div>
+      `
+  
+    document.getElementById('activityRecords').appendChild(pointsDisplay);
+
+    }
