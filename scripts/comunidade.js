@@ -32,13 +32,14 @@ function enviarMensagem() {
   show(nome, comentario, points)
   displayPontosUsuario += points
   document.getElementById("qtdPontosUsuario").innerHTML = `${displayPontosUsuario}<i class="fas fa-leaf"></i>`
+  return false;
 }
 
 function show(name, comment, points, hashTags = "#reciclagem #amogus") {
   let htmlSalvo = document.getElementById("feed").innerHTML
   document.getElementById("feed").innerHTML = `
   <div class="d-flex align-items-center
-  bg-light rounded border border-2 border-primary
+  bg-light rounded border border-2 border-success
   p-2 m-2 col-6">
     <img src="../images/joaoLima.jpg" height="75" class="rounded-circle align-self-start 
     border border-2 border-success">
