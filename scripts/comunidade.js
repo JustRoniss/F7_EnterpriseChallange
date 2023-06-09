@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 function processarTag(tag) {
   switch (tag) {
     case "reciclagem":
@@ -24,6 +16,8 @@ var displayPontosUsuario = 132
 function enviarMensagem() {
   let nome = displayNomeUsuario
   let comentario = document.getElementById("msgInput").value;
+  let zerar = document.getElementById("msgInput");
+  zerar.value = ''
   if (!comentario) return;
 
   let points = 51
