@@ -1,49 +1,55 @@
-document.getElementById('activityForm').addEventListener('submit', function(event) {
-    event.preventDefault(); 
 
 
-    var name = document.getElementById('nameInput').value;
-    var action = document.getElementById('actionInput').value;
-    var type = document.getElementById('typeSelect').value;
-
-    
-    document.getElementById('nameInput').value = '';
-    document.getElementById('actionInput').value = '';
-    document.getElementById('typeSelect').value = '';
 
 
-    updatePoints(name, action, type);
-  });
 
-  function updatePoints(name, action,type) {
-    if(type == 1){
-      var points = 50;
-    }
-    show(name, action,type, points);
+
+
+
+function processarTag(tag) {
+  switch (tag) {
+    case "reciclagem":
+      return 50;
+    case "ambiente":
+    case "sustentabilidade":
+      return 20;
+
+    default:
+      return 10;
   }
+}
 
-    function show (name, action, type, points){
-      var pointsDisplay = document.createElement('div');
-      pointsDisplay.innerHTML =  `
-        <div class="accordion" id="accordionExample">
-            <div class="accordion-item m-2">
-                <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        ${name}
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <p>Telefone: ${name}</p>
-                        <p>Acão: ${action} </p>
-                        <p>AÇÃO: ${type}</p>
-                        <p>PONTOS: ${points}</p>
-                    </div>
-                </div>
-          </div>
-      </div>
-      `
-  
-    document.getElementById('activityRecords').appendChild(pointsDisplay);
+var displayNomeUsuario = "João Lima"
+var displayPontosUsuario = 132
+function enviarMensagem() {
+  let nome = displayNomeUsuario
+  let comentario = document.getElementById("msgInput").value;
+  if (!comentario) return;
 
-    }
+  let points = 51
+  let hashTags = []
+
+  show(nome, comentario, points)
+  displayPontosUsuario += points
+  document.getElementById("qtdPontosUsuario").innerHTML = `${displayPontosUsuario}<i class="fas fa-leaf"></i>`
+}
+
+function show(name, comment, points, hashTags = "#reciclagem #amogus") {
+  let htmlSalvo = document.getElementById("feed").innerHTML
+  document.getElementById("feed").innerHTML = `
+  <div class="d-flex align-items-center
+  bg-light rounded border border-2 border-primary
+  p-2 m-2 col-6">
+    <img src="../images/joaoLima.jpg" height="75" class="rounded-circle align-self-start 
+    border border-2 border-success">
+    <div class="flex-fill align-self-start mx-2">
+      <div class="fw-bold fs-5">${name}</div>
+      <div class="fw-light mx-2 text-justify">${comment}</div>
+      <b class="text-success">${hashTags}</b>
+    </div>
+    <div class="text-success text-nowrap align-self-start">
+      <h4>+${points}<i class="fas fa-leaf"></i></h4>
+    </div>
+  </div>`
+  document.getElementById("feed").innerHTML += htmlSalvo
+}

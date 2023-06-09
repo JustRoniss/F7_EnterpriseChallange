@@ -42,6 +42,17 @@
           </li>
         </ul>
       </div>
+
+      <div class="d-flex align-items-center p-1 m-2 rounded border border-2 border-success">
+        <img src="../images/joaoLima.jpg" height="65" class="rounded-circle border border-3 border-success">
+        <div class="text-center">
+          <div class="mx-2 fw-bold fs-5">João Lima</div>
+          <div class="text-success text-nowrap mx-1">
+            <h4 id="qtdPontosUsuario">132<i class="fas fa-leaf"></i></h4>
+          </div>
+        </div>
+      </div>
+
     </nav>
   </header>
 
@@ -50,51 +61,72 @@
     <div class="row justify-content-center mt-5">
       <div class="col-lg-6">
         <h2 class="text-center mb-4">Comunidade</h2>
-        <form id="activityForm">
-          <div class="mb-3">
-            <label for="nameInput" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="nameInput" placeholder="Digite seu nome">
-          </div>
-          <div class="mb-3">
-            <label for="actionInput" class="form-label">Ação</label>
-            <input type="text" class="form-control" id="actionInput" placeholder="Digite a ação">
-          </div>
-          <div class="mb-3">
-            <label for="typeSelect" class="form-label">Tipo de Atividade</label>
-            <select class="form-select" id="typeSelect">
-              <option value="">Selecione o tipo de atividade</option>
-              <option value="1">Reciclagem</option>
-              <option value="2">Redução do consumo de água</option>
-              <option value="3">Redução na emissão de gases</option>
-              <option value="4">Outro</option>
-            </select>
-          </div>
-          <div class="text-center">
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
-          </div>
-        </form>
       </div>
     </div>
 
-    <div id="activityRecords" class="row container w-100 justify-content-center">
+    <div class="row container w-100 justify-content-center">
+      <form id="activityForm" onsubmit="enviarMensagem()" class="d-flex align-items-center p-2 m-2 col-8
+        bg-white rounded border border-2 border-primary">
+        <img src="../images/joaoLima.jpg" height="50"
+          class="rounded-circle border border-2 border-success align-self-start">
+        <textarea type="text" class="flex-fill mx-2 rounded border border-1 border-primary bg-light
+          form-control" placeholder="O que você fez hoje?" id="msgInput" style="resize: none;"></textarea>
+        <button type="submit" class="btn btn-primary text-center fw-bold fs-5">Enviar</button>
+      </form>
+    </div>
+
+    <div id="feed" class="row container w-100 justify-content-center">
 
       <div class="d-flex align-items-center
         bg-light rounded border border-2 border-primary
         p-2 m-2 col-6">
-        <img src="../images/joaoLima.jpg" height="75" class="rounded-circle align-self-start 
+        <img src="../images/AndreAnjos.png" height="75" class="rounded-circle align-self-start 
         border border-2 border-success">
         <div class="flex-fill align-self-start mx-2">
-          <h5><b>João Lima</b></h5>
-          <i>Joguei bateria no mar porque sou porra louca asdasdasdasdasdasdasdasdasdasdasdasds the fitness grand pacer
-            test is a multistage aerocub capacity test</i><br>
+          <div class="fw-bold fs-5">André Anjos</div>
+          <div class="fw-light mx-2 text-justify">Jogando o #lixo no lixo!</div>
+          <img src="../images/lixo.jpeg" class="rounded img-fluid mt-2">
           <b class="text-success">#reciclagem</b>
         </div>
-        <div class="text-success text-nowrap">
-          <h4>+51<i class="fas fa-leaf"></i></h4>
+        <div class="text-success text-nowrap align-self-start">
+          <h4>+35<i class="fas fa-leaf"></i></h4>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center
+        bg-light rounded border border-2 border-primary
+        p-2 m-2 col-6">
+        <img src="../images/karen.jpg" height="75" class="rounded-circle align-self-start 
+        border border-2 border-success">
+        <div class="flex-fill align-self-start mx-2">
+          <div class="fw-bold fs-5">Renata Silva</div>
+          <div class="fw-light mx-2 text-justify">Precisamos aumentar a produção de veículos elétricos,
+            pois nossa futura geração irá respirar os gases tóxicos que nossos carros estão produzindo hoje!</div>
+          <b class="text-success">#meio-ambiente #aquecimento-global</b>
+        </div>
+        <div class="text-success text-nowrap align-self-start">
+          <h4>+22<i class="fas fa-leaf"></i></h4>
+        </div>
+      </div>
+    
+      <div class="d-flex align-items-center
+        bg-light rounded border border-2 border-primary
+        p-2 m-2 col-6">
+        <img src="../images/image.41760.1624117.jpg" height="75" class="rounded-circle align-self-start 
+        border border-2 border-success">
+        <div class="flex-fill align-self-start mx-2">
+          <div class="fw-bold fs-5">Evelyn Carvalho</div>
+          <div class="fw-light mx-2 text-justify">Gente!!! Olha como cresceu o feijãozinho do meu filho!</div>
+          <img src="../images/hora-da-brincadeira-aprenda-a-plantar-feijao-no-algodao_4.webp" class="rounded img-fluid mt-2">
+          <b class="text-success">#botanica</b>
+        </div>
+        <div class="text-success text-nowrap align-self-start">
+          <h4>+63<i class="fas fa-leaf"></i></h4>
         </div>
       </div>
 
     </div>
+
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
