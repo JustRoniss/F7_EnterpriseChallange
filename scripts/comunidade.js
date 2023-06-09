@@ -1,5 +1,5 @@
 var displayNomeUsuario = "João Lima"
-var displayPontosUsuario = 132
+var displayPontosUsuario = 362
 function enviarMensagem() {
   let nome = displayNomeUsuario
   let comentario = document.getElementById("msgInput").value;
