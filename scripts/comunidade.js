@@ -1,16 +1,3 @@
-function processarTag(tag) {
-  switch (tag) {
-    case "reciclagem":
-      return 50;
-    case "ambiente":
-    case "sustentabilidade":
-      return 20;
-
-    default:
-      return 10;
-  }
-}
-
 var displayNomeUsuario = "João Lima"
 var displayPontosUsuario = 132
 function enviarMensagem() {
@@ -20,8 +7,7 @@ function enviarMensagem() {
   zerar.value = ''
   if (!comentario) return;
 
-  let points = 51
-  let hashTags = []
+  let points = 21
 
   show(nome, comentario, points)
   displayPontosUsuario += points
@@ -29,7 +15,7 @@ function enviarMensagem() {
   return false;
 }
 
-function show(name, comment, points, hashTags = "#reciclagem #amogus") {
+function show(name, comment, points, hashTags = "#reciclagem #economia") {
   let htmlSalvo = document.getElementById("feed").innerHTML
   document.getElementById("feed").innerHTML = `
   <div class="d-flex align-items-center
