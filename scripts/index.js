@@ -14,7 +14,7 @@ let currentContentIndex = 0;
       contentElement.textContent = contents[currentContentIndex];
       nextBtn.innerHTML = 'Avançar'
       if(currentContentIndex === 2){
-        nextBtn.innerHTML = '<a href="/pages/comunidade.html" class="text-decoration-none link-light link-opacity-100-hover link-underline-dark">Acessar comunidade</a> '
+        nextBtn.innerHTML = '<a href="./pages/comunidade.html" class="text-decoration-none link-light link-opacity-100-hover link-underline-dark">Acessar comunidade</a> '
       }
     }
 
